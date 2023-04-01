@@ -29,6 +29,7 @@ pub(crate) mod private {
     pub trait Sealed {}
 }
 impl private::Sealed for crate::nfa::noncontiguous::NFA {}
+impl private::Sealed for crate::nfa::interleaved::NFA {}
 impl private::Sealed for crate::nfa::contiguous::NFA {}
 impl private::Sealed for crate::dfa::DFA {}
 
