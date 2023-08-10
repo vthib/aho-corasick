@@ -575,6 +575,13 @@ impl Builder {
             nfa.memory_usage(),
             nfa.byte_classes.alphabet_len(),
         );
+
+        nfa.repr.shrink_to_fit();
+        nfa.pattern_lens.shrink_to_fit();
+        for m in &mut nfa.matches {
+            m.shrink_to_fit();
+        }
+        nfa.matches.shrink_to_fit();
         Ok(nfa)
     }
 
